@@ -72,7 +72,7 @@ resources:
     memory: 1Gi
 
 livenessProbe:
-  initialDelaySeconds: 10
+  initialDelaySeconds: 100
   failureThreshold: 3
   successThreshold: 1
   # tcpSocket:
@@ -81,7 +81,7 @@ livenessProbe:
     path: /actuator/health
     port: 8080
 readinessProbe:
-  initialDelaySeconds: 10
+  initialDelaySeconds: 100
   failureThreshold: 3
   successThreshold: 1
   # tcpSocket:
