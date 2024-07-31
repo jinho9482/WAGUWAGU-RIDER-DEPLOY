@@ -97,8 +97,6 @@ env:
     value: 1234
   - name: POSTGRES_DB
     value: rider
-  - name: profiles
-    value: prod
 
 autoscaling:
   enabled: false
