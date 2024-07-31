@@ -92,7 +92,7 @@ readinessProbe:
 
 env:
   - name: POSTGRES_USER
-    value: root
+    value: postgres
   - name: POSTGRES_PASSWORD
     value: 1234
   - name: profiles
