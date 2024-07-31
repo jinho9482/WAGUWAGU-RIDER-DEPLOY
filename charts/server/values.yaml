@@ -75,21 +75,21 @@ livenessProbe:
   initialDelaySeconds: 10
   failureThreshold: 3
   successThreshold: 1
-  tcpSocket:
-    port: 8080
+  # tcpSocket:
+  #   port: 8080
   httpGet:
     path: /actuator/health
-    port: http
+    port: 8080
 readinessProbe:
   initialDelaySeconds: 10
   failureThreshold: 3
   successThreshold: 1
-  tcpSocket:
-    port: 8080
+  # tcpSocket:
+  #   port: 8080
   httpGet:
     path: /actuator/health
-    port: http
-    
+    port: 8080
+
 env:
   - name: POSTGRES_USER
     value: root
