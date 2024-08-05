@@ -100,10 +100,6 @@ env:
     value: 1234
   - name: profiles
     value: prod
-  - name: redis-host
-    value: rider-redis
-  - name: redis-port
-    value: 6379
 
 autoscaling:
   enabled: false
