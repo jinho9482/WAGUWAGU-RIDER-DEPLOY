@@ -98,8 +98,8 @@ env:
     value: root
   - name: POSTGRES_PASSWORD
     value: 1234
-  - name: profiles
-    value: prod
+  # - name: profiles
+  #   value: prod
   - name: REDIS_HOST
     value: "rider-redis"
   - name: REDIS_PORT
