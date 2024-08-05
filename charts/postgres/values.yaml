@@ -75,7 +75,6 @@ resources:
     memory: 1Gi
 
 livenessProbe:
-  # initialDelaySeconds: 10
   # failureThreshold: 3
   # successThreshold: 1
   tcpSocket:
