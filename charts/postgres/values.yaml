@@ -28,10 +28,12 @@ serviceAccount:
 podAnnotations: {}
 podLabels: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -46,7 +48,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -59,7 +62,7 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: 
+resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -72,18 +75,18 @@ resources:
     memory: 1Gi
 
 livenessProbe:
-  initialDelaySeconds: 10
-  failureThreshold: 3
-  successThreshold: 1
+  # initialDelaySeconds: 10
+  # failureThreshold: 3
+  # successThreshold: 1
   tcpSocket:
     port: 5432
   # httpGet:
   #   path: /
   #   port: http
 readinessProbe:
-  initialDelaySeconds: 10
-  failureThreshold: 3
-  successThreshold: 1
+  # initialDelaySeconds: 10
+  # failureThreshold: 3
+  # successThreshold: 1
   tcpSocket:
     port: 5432
   # httpGet:
@@ -97,6 +100,10 @@ env:
     value: 1234
   - name: POSTGRES_DB
     value: rider
+  - name: SPRING_DATA_REDIS_HOST
+    value: rider-redis
+  - name: SPRING_DATA_REDIS_PORT
+    value: 6379
 
 autoscaling:
   enabled: false
