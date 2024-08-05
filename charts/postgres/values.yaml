@@ -99,10 +99,6 @@ env:
     value: 1234
   - name: POSTGRES_DB
     value: rider
-  - name: SPRING_DATA_REDIS_HOST
-    value: rider-redis
-  - name: SPRING_DATA_REDIS_PORT
-    value: 6379
 
 autoscaling:
   enabled: false
