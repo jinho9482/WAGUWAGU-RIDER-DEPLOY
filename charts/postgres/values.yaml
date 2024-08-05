@@ -74,23 +74,23 @@ resources:
     cpu: 500m
     memory: 1Gi
 
-livenessProbe:
-  # failureThreshold: 3
-  # successThreshold: 1
-  tcpSocket:
-    port: 5432
-  # httpGet:
-  #   path: /
-  #   port: http
-readinessProbe:
-  # initialDelaySeconds: 10
-  # failureThreshold: 3
-  # successThreshold: 1
-  tcpSocket:
-    port: 5432
-  # httpGet:
-  #   path: /
-  #   port: http
+# livenessProbe:
+# failureThreshold: 3
+# successThreshold: 1
+# tcpSocket:
+#   port: 5432
+# httpGet:
+#   path: /
+#   port: http
+# readinessProbe:
+# initialDelaySeconds: 10
+# failureThreshold: 3
+# successThreshold: 1
+# tcpSocket:
+#   port: 5432
+# httpGet:
+#   path: /
+#   port: http
 
 env:
   - name: POSTGRES_USER
