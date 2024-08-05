@@ -78,8 +78,8 @@ livenessProbe:
   # initialDelaySeconds: 100
   # failureThreshold: 3
   # successThreshold: 1
-  # tcpSocket:
-  #   port: 8080
+  tcpSocket:
+    port: 8080
   httpGet:
     path: /actuator/health
     port: 8080
@@ -100,9 +100,9 @@ env:
     value: 1234
   - name: profiles
     value: prod
-  - name: SPRING_DATA_REDIS_HOST
+  - name: redis-host
     value: rider-redis
-  - name: SPRING_DATA_REDIS_PORT
+  - name: redis-port
     value: 6379
 
 autoscaling:
