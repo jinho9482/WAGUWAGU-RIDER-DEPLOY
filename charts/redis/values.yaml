@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: redis
+  repository: redis/redis-stack-server
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -74,24 +74,24 @@ resources:
     cpu: 500m
     memory: 1Gi
 
-livenessProbe:
-  # initialDelaySeconds: 10
-  # failureThreshold: 3
-  # successThreshold: 1
-  tcpSocket:
-    port: 6379
-  # httpGet:
-  #   path: /
-  #   port: http
-readinessProbe:
-  # initialDelaySeconds: 10
-  # failureThreshold: 3
-  # successThreshold: 1
-  tcpSocket:
-    port: 6379
-  # httpGet:
-  #   path: /
-  #   port: http
+# livenessProbe:
+# initialDelaySeconds: 10
+# failureThreshold: 3
+# successThreshold: 1
+# tcpSocket:
+#   port: 6379
+# httpGet:
+#   path: /
+#   port: http
+# readinessProbe:
+# initialDelaySeconds: 10
+# failureThreshold: 3
+# successThreshold: 1
+# tcpSocket:
+#   port: 6379
+# httpGet:
+#   path: /
+#   port: http
 
 autoscaling:
   enabled: false
