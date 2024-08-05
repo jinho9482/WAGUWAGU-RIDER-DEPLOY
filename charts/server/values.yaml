@@ -100,10 +100,10 @@ env:
     value: 1234
   - name: profiles
     value: prod
-  - name: SPRING_REDIS_HOST
-    value: "rider-redis"
-  - name: SPRING_REDIS_PORT
-    value: 6379
+  # - name: SPRING_REDIS_HOST
+  #   value: "rider-redis"
+  # - name: SPRING_REDIS_PORT
+  #   value: 6379
 
 autoscaling:
   enabled: false
