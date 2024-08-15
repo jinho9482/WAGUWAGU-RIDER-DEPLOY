@@ -12,13 +12,13 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: rider-server # 서비스 이름
+                name: waguwagu-rider-server # 서비스 이름
                 port:
                   number: 8080
           - path: /api/v1/payments # 본인 서버에서 일관성 있는 엔드포인트
             pathType: Prefix
             backend:
               service:
-                name: payment-server # 서비스 이름
+                name: waguwagu-payment-server # 서비스 이름
                 port:
                   number: 8080
