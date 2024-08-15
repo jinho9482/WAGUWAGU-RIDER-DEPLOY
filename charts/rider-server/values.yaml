@@ -101,7 +101,7 @@ env:
   - name: profiles
     value: prod
   - name: SPRING_DATA_REDIS_HOST
-    value: "rider-redis"
+    value: "waguwagu-rider-redis"
   - name: SPRING_DATA_REDIS_PORT
     value: 6379
 
