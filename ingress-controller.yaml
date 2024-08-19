@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rider-payment-ingress
+  name: waguwagu-ingress
 spec:
   ingressClassName: nginx
   rules:
@@ -20,5 +20,19 @@ spec:
             backend:
               service:
                 name: waguwagu-payment-server # 서비스 이름
+                port:
+                  number: 8080
+          # - path: /api/v1/cart
+          #   pathType: Prefix
+          #   backend:
+          #     service:
+          #       name: cart # 서비스 이름
+          #       port:
+          #         number: 8080
+          - path: /api/v1/reviews
+            pathType: Prefix
+            backend:
+              service:
+                name: review-server
                 port:
                   number: 8080
