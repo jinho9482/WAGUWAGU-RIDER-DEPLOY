@@ -5,13 +5,13 @@ metadata:
   name: waguwagu-ingress
   annotations:
     # Ingress Core Settings
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: nginx # 밑의 ingressClassName과 맞춰야 한다.
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.lb_cookie.duration_seconds=60
     # SSL Settings
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-2:058264353391:certificate/1cca86ab-76c5-48dc-88e7-218ca845c8e3
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-2:058264353391:certificate/1cca86ab-76c5-48dc-88e7-218ca845c8e3 # SSL 인증서를 AWS에 등록하고 받은 arn 값
     alb.ingress.kubernetes.io/ssl-redirect: "443"
 spec:
   ingressClassName: nginx
@@ -44,5 +44,61 @@ spec:
             backend:
               service:
                 name: review-server
+                port:
+                  number: 8080
+          - path: /api/v1/sales # 본인 서버에서 일관성 있는 엔드포인트
+            pathType: Prefix
+            backend:
+              service:
+                name: waguwagu-store-helm-sales # 서비스 이름
+                port:
+                  number: 8080
+          - path: /api/v1/photo # 본인 서버에서 일관성 있는 엔드포인트
+            pathType: Prefix
+            backend:
+              service:
+                name: helm-waguwagu-upload-server # 서비스 이름
+                port:
+                  number: 8080
+          - path: /api/v1/store # 본인 서버에서 일관성 있는 엔드포인트
+            pathType: Prefix
+            backend:
+              service:
+                name: waguwagu-store-helm-server # 서비스 이름
+                port:
+                  number: 8080
+          - path: /api/v1/FcmTokens # 본인 서버에서 일관성 있는 엔드포인트
+            pathType: Prefix
+            backend:
+              service:
+                name: push-server # 서비스 이름
+                port:
+                  number: 8080
+          - path: /alarm # 본인 서버에서 일관성 있는 엔드포인트
+            pathType: Prefix
+            backend:
+              service:
+                name: wgwg-alarm # 서비스 이름
+                port:
+                  number: 8080
+          - path: /api/v1/photo
+            pathType: Prefix
+            backend:
+              service:
+                name: helm-waguwagu-upload-server # 서비스 이름
+                port:
+                  number: 8080
+          - path: /api/v1/store
+            pathType: Prefix
+            backend:
+              service:
+                name: helm-waguwagu-store-server # 서비스 이름
+                port:
+                  number: 8080
+          - path: /api/v1/sales
+            pathType: Prefix
+            backend:
+              service:
+                name: helm-waguwagu-store-sales # 서비스 이름
                 port:
                   number: 8080
