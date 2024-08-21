@@ -18,6 +18,13 @@ spec:
   rules:
     - http:
         paths:
+          - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: wgwg-store-front # 서비스 이름
+                  port:
+                    number: 80
           - path: /api/v1/riders # 본인 서버에서 일관성 있는 엔드포인트
             pathType: Prefix
             backend:
@@ -95,3 +102,4 @@ spec:
                 name: order-waguwagu-order # 서비스 이름
                 port:
                   number: 8080
+          
