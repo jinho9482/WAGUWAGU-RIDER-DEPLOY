@@ -1,15 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "redis.fullname" . }}
-  labels:
-    {{- include "redis.labels" . | nindent 4 }}
+  name: { { include "rider-redis.fullname" . } }
+  labels: { { - include "rider-redis.labels" . | nindent 4 } }
 spec:
-  type: {{ .Values.service.type }}
+  type: { { .Values.service.type } }
   ports:
-    - port: {{ .Values.service.port }}
+    - port: { { .Values.service.port } }
       targetPort: http
       protocol: TCP
       name: http
-  selector:
-    {{- include "redis.selectorLabels" . | nindent 4 }}
+  selector: { { - include "rider-redis.selectorLabels" . | nindent 4 } }
