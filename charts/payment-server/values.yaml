@@ -106,6 +106,8 @@ env:
     value: 3306
   - name: DDL_AUTO
     value: create
+  - name: PAYMENT_DB
+    value: waguwagu_payment    
   
 
 autoscaling:
