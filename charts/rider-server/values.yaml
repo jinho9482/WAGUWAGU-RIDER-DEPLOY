@@ -104,6 +104,12 @@ env:
     value: "waguwagu-rider-redis"
   - name: SPRING_DATA_REDIS_PORT
     value: 6379
+  - name: POSTGRES_HOST
+    value: waguwagu-rider-postgres
+  - name: POSTGRES_PORT
+    value: 5432
+  - name: DDL_AUTO
+    value: create
 
 autoscaling:
   enabled: false
