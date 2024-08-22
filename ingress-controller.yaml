@@ -12,7 +12,7 @@ metadata:
     # SSL Settings
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-2:058264353391:certificate/1cca86ab-76c5-48dc-88e7-218ca845c8e3 # SSL 인증서를 AWS에 등록하고 받은 arn 값
-    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   rules:
