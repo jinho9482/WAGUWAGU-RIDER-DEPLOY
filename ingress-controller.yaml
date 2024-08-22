@@ -102,7 +102,7 @@ spec:
                 name: wgwg-auth-server # 서비스 이름
                 port:
                   number: 8080
-          - path: /
+          - path: /store
             pathType: Prefix
             backend:
               service:
