@@ -101,7 +101,7 @@ env:
   - name: profiles
     value: prod
   - name: MYSQL_HOST
-    value: payment-mysql
+    value: waguwagu-payment-mysql
   - name: MYSQL_PORT
     value: 3306
   - name: DDL_AUTO
