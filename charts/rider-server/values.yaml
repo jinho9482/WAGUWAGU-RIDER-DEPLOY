@@ -109,7 +109,7 @@ env:
   - name: POSTGRES_PORT
     value: 5432
   - name: DDL_AUTO
-    value: create
+    value: update
   - name: RIDER_DB
     value: rider
 

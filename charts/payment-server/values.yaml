@@ -105,7 +105,7 @@ env:
   - name: MYSQL_PORT
     value: 3306
   - name: DDL_AUTO
-    value: create
+    value: update
   - name: PAYMENT_DB
     value: waguwagu_payment    
   
